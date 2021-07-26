@@ -7,7 +7,11 @@ class Welcome extends Component {
   }
 
   subStatus = () => {
-    this.setState({status: 'Subscribed'})
+    const {status} = this.state
+    if (status === 'Subscribe') {
+      return this.setState({status: 'Subscribed'})
+    }
+    return this.setState({status: 'Subscribe'})
   }
 
   render() {
